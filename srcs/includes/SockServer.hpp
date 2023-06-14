@@ -6,7 +6,7 @@
 /*   By: klew <klew@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/06 12:16:03 by klew              #+#    #+#             */
-/*   Updated: 2023/06/13 17:12:59 by klew             ###   ########.fr       */
+/*   Updated: 2023/06/14 18:29:40 by klew             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,11 @@
 #include "errors.hpp"
 #include <sys/types.h>
 
+using namespace std;
 
 class SockServer {
 	private:
-		typedef void(*command)(SockServer &, std::vector<std::string>&, User&);
+		typedef void(*command)(SockServer &, vector<std::string>&, User&);
 		std::string _port;
 		t_pollfd _serverFd;
 		fdVector _fds;

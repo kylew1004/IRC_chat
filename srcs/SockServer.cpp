@@ -6,7 +6,7 @@
 /*   By: klew <klew@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/06 12:08:44 by klew              #+#    #+#             */
-/*   Updated: 2023/06/13 17:56:09 by klew             ###   ########.fr       */
+/*   Updated: 2023/06/14 18:30:42 by klew             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -293,7 +293,7 @@ void SockServer::messageRouter(int fd, std::string &msg) {
 		if (usr.pass == 0 && args[0] != "PASS")
 			return;
 	}
-	std::transform(args[0].begin(), args[0].end(),args[0].begin(), ::toupper);
+	transform(args[0].begin(), args[0].end(),args[0].begin(), ::toupper);
 	std::string disp = usr.ip;
 	if (!usr.nick.empty())
 		disp = usr.nick;
