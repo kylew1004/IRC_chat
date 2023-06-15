@@ -6,7 +6,7 @@
 /*   By: klew <klew@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/06 12:09:05 by klew              #+#    #+#             */
-/*   Updated: 2023/06/13 17:12:37 by klew             ###   ########.fr       */
+/*   Updated: 2023/06/15 12:26:14 by klew             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ static int startSocket() {
 	}
 
 	int opt = 1;
-	if (setsockopt(serverFd, SOL_SOCKET, OPTS, &opt, sizeof(opt))) {
+	if (setsockopt(serverFd, SOL_SOCKET, OPTS, &opt, sizeof(opt))) { // 커널에서 소켓을 바인딩하고 있기 때문에 재사용 가능하게 해야함.
 		std::cerr << std::strerror(errno) << std::endl;
 		throw std::runtime_error("socket was not properly created");
 	}
